@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1208" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j4L-6n-15k">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="YzD-aa-I5i">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="j4L-6n-15k" customClass="SettingsViewController" customModule="Umbrella" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3ul-H1-srf"/>
+                        <viewControllerLayoutGuide type="bottom" id="EG5-Tt-t70"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="73M-RB-cDw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rf-If-bga">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YDd-hF-WxE" userLabel="blurView">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAg-oX-6gu">
+                                            <rect key="frame" x="74" y="100" width="227" height="85"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="liG-Vj-7J9" userLabel="vibrancyView">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="85"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="teL-Bb-srY">
+                                                        <rect key="frame" x="1" y="1" width="225" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="Ii8-qQ-hTw"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Fahrenheit"/>
+                                                            <segment title="Celsius"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="segmentedControlChanged:" destination="j4L-6n-15k" eventType="valueChanged" id="DD6-R0-YvT"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdi-x8-9Ix">
+                                                        <rect key="frame" x="58" y="54" width="110" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="2C8-ja-54Q"/>
+                                                            <constraint firstAttribute="height" constant="30" id="N3e-QA-LWn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Get the weather"/>
+                                                        <connections>
+                                                            <action selector="getTheWeatherButtonPressed" destination="j4L-6n-15k" eventType="touchUpInside" id="4vo-JV-QAe"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="teL-Bb-srY" firstAttribute="leading" secondItem="liG-Vj-7J9" secondAttribute="leading" constant="1" id="3M0-vf-vmX"/>
+                                                    <constraint firstItem="Wdi-x8-9Ix" firstAttribute="top" secondItem="teL-Bb-srY" secondAttribute="bottom" constant="25" id="YDb-FZ-SE1"/>
+                                                    <constraint firstItem="teL-Bb-srY" firstAttribute="top" secondItem="liG-Vj-7J9" secondAttribute="top" constant="1" id="d2p-Rz-Y35"/>
+                                                    <constraint firstItem="Wdi-x8-9Ix" firstAttribute="centerX" secondItem="liG-Vj-7J9" secondAttribute="centerX" id="fOG-vx-KMY"/>
+                                                    <constraint firstAttribute="trailing" secondItem="teL-Bb-srY" secondAttribute="trailing" constant="1" id="sty-HL-wWx"/>
+                                                    <constraint firstItem="teL-Bb-srY" firstAttribute="centerX" secondItem="liG-Vj-7J9" secondAttribute="centerX" id="xfd-NI-V6i"/>
+                                                </constraints>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Wdi-x8-9Ix" secondAttribute="bottom" constant="1" id="D7r-0g-OXI"/>
+                                                <constraint firstAttribute="width" constant="227" id="Vio-8f-Alo"/>
+                                            </constraints>
+                                            <vibrancyEffect>
+                                                <blurEffect style="dark"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="iAg-oX-6gu" firstAttribute="centerX" secondItem="YDd-hF-WxE" secondAttribute="centerX" id="vmZ-de-XAr"/>
+                                    </constraints>
+                                </view>
+                                <gestureRecognizers/>
+                                <blurEffect style="dark"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JuW-Ua-det" appends="YES" id="d8q-4D-2wK"/>
+                                </connections>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iua-w4-lic" userLabel="zipCodeView">
+                                <rect key="frame" x="15" y="45" width="345" height="30"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchGlass" translatesAutoresizingMaskIntoConstraints="NO" id="tLs-q5-qi8">
+                                        <rect key="frame" x="10" y="6.5" width="14" height="17"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhk-Zz-eBs">
+                                        <rect key="frame" x="34" y="6.5" width="301" height="17"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mhk-Zz-eBs" firstAttribute="leading" secondItem="tLs-q5-qi8" secondAttribute="trailing" constant="10" id="Eie-0l-7Qj"/>
+                                    <constraint firstItem="tLs-q5-qi8" firstAttribute="leading" secondItem="Iua-w4-lic" secondAttribute="leading" constant="10" id="Tos-Mf-OFp"/>
+                                    <constraint firstAttribute="trailing" secondItem="mhk-Zz-eBs" secondAttribute="trailing" constant="10" id="X6Z-ze-4mm"/>
+                                    <constraint firstAttribute="height" constant="30" id="bx1-Fq-2ev"/>
+                                    <constraint firstItem="mhk-Zz-eBs" firstAttribute="centerY" secondItem="Iua-w4-lic" secondAttribute="centerY" id="jMp-UH-Ws6"/>
+                                    <constraint firstItem="tLs-q5-qi8" firstAttribute="centerY" secondItem="Iua-w4-lic" secondAttribute="centerY" id="mzx-3k-kHJ"/>
+                                    <constraint firstItem="mhk-Zz-eBs" firstAttribute="height" secondItem="tLs-q5-qi8" secondAttribute="height" id="nup-u9-RfI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Iua-w4-lic" secondAttribute="trailing" constant="15" id="2M2-ZZ-j7Q"/>
+                            <constraint firstItem="8Rf-If-bga" firstAttribute="width" secondItem="73M-RB-cDw" secondAttribute="width" id="3iN-iY-fcP"/>
+                            <constraint firstItem="Iua-w4-lic" firstAttribute="leading" secondItem="73M-RB-cDw" secondAttribute="leading" constant="15" id="EmH-GZ-J5h"/>
+                            <constraint firstItem="iAg-oX-6gu" firstAttribute="top" secondItem="Iua-w4-lic" secondAttribute="bottom" constant="25" id="PLJ-Un-HVV"/>
+                            <constraint firstItem="8Rf-If-bga" firstAttribute="height" secondItem="73M-RB-cDw" secondAttribute="height" id="Ter-OT-cg3"/>
+                            <constraint firstItem="Iua-w4-lic" firstAttribute="centerX" secondItem="73M-RB-cDw" secondAttribute="centerX" id="f01-2J-np1"/>
+                            <constraint firstItem="Iua-w4-lic" firstAttribute="top" secondItem="3ul-H1-srf" secondAttribute="bottom" constant="25" id="gGr-Uf-9nL"/>
+                            <constraint firstItem="8Rf-If-bga" firstAttribute="centerX" secondItem="73M-RB-cDw" secondAttribute="centerX" id="gO6-a5-XpY"/>
+                            <constraint firstItem="8Rf-If-bga" firstAttribute="centerY" secondItem="73M-RB-cDw" secondAttribute="centerY" id="rMo-Zs-Hc7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="teL-Bb-srY" id="QVx-py-tKQ"/>
+                        <outlet property="zipCodeTextField" destination="mhk-Zz-eBs" id="MQh-WK-3Nd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W8d-kK-ebd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JuW-Ua-det">
+                    <connections>
+                        <action selector="blurViewTapped:" destination="j4L-6n-15k" id="6LY-wR-Rdm"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-637.60000000000002" y="-17.541229385307346"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="searchGlass" width="14" height="15"/>
+    </resources>
+</document>
